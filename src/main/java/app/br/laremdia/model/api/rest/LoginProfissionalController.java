@@ -1,4 +1,4 @@
-package app.br.laremdia.model.model.api.rest;
+package app.br.laremdia.model.api.rest;
 
 import app.br.laremdia.model.entity.LoginProfissional;
 import app.br.laremdia.model.repository.LoginProfissionalRepository;

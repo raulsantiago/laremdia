@@ -1,35 +1,84 @@
-<div>
-  <label for="exampleColorInput" class="form-label">Color picker</label>
-  <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
-<div>
+<h5>Popup</h5>
+<div class="p-fluid p-grid p-formgrid">
+    <div class="p-field p-col-12 p-md-4">
+        <label for="basic">Basic</label>
+        <p-calendar inputId="basic" [(ngModel)]="date1"></p-calendar>
+    </div>
 
-<div>
-  <button type="button" class="btn btn-primary">Primary</button>
+    <div class="p-field p-col-12 p-md-4">
+        <label for="spanish">Spanish</label>
+        <p-calendar [(ngModel)]="date2" [locale]="es" dateFormat="dd/mm/yy" inputId="spanish"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="icon">Icon</label>
+        <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="min-max">Min-Max</label>
+        <p-calendar [(ngModel)]="date4" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true" inputId="min-max"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="disabledays">Disable Days</label>
+        <p-calendar [(ngModel)]="date5" [disabledDates]="invalidDates" [disabledDays]="[0,6]" [readonlyInput]="true" inputId="disabledays"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="navigators">Navigators</label>
+        <p-calendar [(ngModel)]="date6" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" inputId="navigators"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="time">Time</label>
+        <p-calendar [(ngModel)]="date7" [showTime]="true" inputId="time"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="timeonly">Time Only</label>
+        <p-calendar [(ngModel)]="date8" [timeOnly]="true" inputId="timeonly"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="multiple">Multiple</label>
+        <p-calendar [(ngModel)]="dates" selectionMode="multiple" [readonlyInput]="true" inputId="multiple"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="range">Range</label>
+        <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="buttonbar">Button Bar</label>
+        <p-calendar [(ngModel)]="date9" showButtonBar="true" inputId="buttonbar"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="template">Date Template</label>
+        <p-calendar [(ngModel)]="date10" inputId="template">
+            <ng-template pTemplate="date" let-date>
+                <span [ngStyle]="{backgroundColor: (date.day < 21 && date.day > 10) ? '#81C784' : 'inherit'}" style="border-radius:50%; padding: .25em; width: 2em; height: 2em; display:block">{{date.day}}</span>
+            </ng-template>
+        </p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="multiplemonths">Multiple Months</label>
+        <p-calendar [(ngModel)]="date11" [numberOfMonths]="3" inputId="multiplemonths"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="monthpicker">Month Picker</label>
+        <p-calendar [(ngModel)]="date12" view="month" dateFormat="mm/yy" [yearNavigator]="true" yearRange="2000:2030" [readonlyInput]="true" inputId="monthpicker"></p-calendar>
+    </div>
+
+    <div class="p-field p-col-12 p-md-4">
+        <label for="touchui">Touch UI</label>
+        <p-calendar [(ngModel)]="date13" [touchUI]="true" [readonlyInput]="true" inputId="touchui"></p-calendar>
+    </div>
 </div>
 
-<div>
-
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-</div>
-
+<h5>Inline</h5>
+<p-calendar [(ngModel)]="date14" [inline]="true" [showWeek]="true"></p-calendar>
