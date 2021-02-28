@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -16,8 +15,9 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { RippleModule } from 'primeng/ripple';
-import { TabViewModule } from 'primeng/tabview';
 import { CalendarModule } from 'primeng/calendar';
+import { DataViewModule } from 'primeng/dataview';
+import { PaginatorModule } from 'primeng/paginator';
 import { DropdownModule } from 'primeng/dropdown';
 
 
@@ -27,9 +27,11 @@ import { DropdownModule } from 'primeng/dropdown';
   ],
   imports: [
     CommonModule,
-    CalendarModule,
-    BrowserModule,
+    DataViewModule,
     DropdownModule,
+    PaginatorModule,
+    CalendarModule,
+    BrowserModule,    
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
