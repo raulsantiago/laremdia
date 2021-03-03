@@ -1,14 +1,16 @@
 package app.br.laremdia.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Getter@Setter
-@NoArgsConstructor
+@Data
 @Table(name="login_cliente")
 public class LoginCliente {
 
@@ -54,9 +56,19 @@ public class LoginCliente {
     private String referencia;
 
     @Column(nullable = true)
-    private String foto;
+    @Lob
+    private byte[] foto;
 
     @Column(nullable = false)
     private Boolean ativo;
+
+    @Column(name="data_cadastro", nullable = false, updatable = false)
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataCadastro;
+
+    @PrePersist
+    public void prePersist(){
+        setDataCadastro(LocalDate.now());
+    }
 
 }

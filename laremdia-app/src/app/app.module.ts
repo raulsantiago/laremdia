@@ -1,15 +1,16 @@
+// Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe, CurrencyPipe, CommonModule } from  '@angular/common';
-import { NgxMaskModule } from 'ngx-mask';
+import { HttpClientModule } from '@angular/common/http';
 
+// Boostrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// Primeng
+import { NgxMaskModule } from 'ngx-mask';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -20,13 +21,22 @@ import { DataViewModule } from 'primeng/dataview';
 import { PaginatorModule } from 'primeng/paginator';
 import { DropdownModule } from 'primeng/dropdown';
 
+// Componentes
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginProfissionalComponent } from './components/login-profissional/login-profissional.component';
+import { LoginProfissionalService } from './services/login-profissional.service';
+import { GerenciarLoginProfissionalComponent } from './components/login-profissional/gerenciar-login-profissional/gerenciar-login-profissional.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginProfissionalComponent,
+    GerenciarLoginProfissionalComponent          
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     DataViewModule,
     DropdownModule,
     PaginatorModule,
@@ -46,8 +56,8 @@ import { DropdownModule } from 'primeng/dropdown';
   ],
   providers: [
     DatePipe,
-    CurrencyPipe
-
+    CurrencyPipe,
+    LoginProfissionalService
   ],
   bootstrap: [AppComponent]
 })
