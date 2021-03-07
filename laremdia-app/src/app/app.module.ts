@@ -24,15 +24,20 @@ import { DropdownModule } from 'primeng/dropdown';
 // Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginProfissionalComponent } from './components/login-profissional/login-profissional.component';
+import { LoginProfissionalComponent } from './components/login-profissional/login-profissional/login-profissional.component';
 import { LoginProfissionalService } from './services/login-profissional.service';
 import { GerenciarLoginProfissionalComponent } from './components/login-profissional/gerenciar-login-profissional/gerenciar-login-profissional.component';
+import { AuthService } from './services/auth.service';
+import { LoginClienteComponent } from './components/login-cliente/login-cliente/login-cliente.component';
+import { GerenciarLoginClienteComponent } from './components/login-cliente/gerenciar-login-cliente/gerenciar-login-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginProfissionalComponent,
-    GerenciarLoginProfissionalComponent          
+    GerenciarLoginProfissionalComponent,
+    LoginClienteComponent,
+    GerenciarLoginClienteComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +62,8 @@ import { GerenciarLoginProfissionalComponent } from './components/login-profissi
   providers: [
     DatePipe,
     CurrencyPipe,
-    LoginProfissionalService
+    LoginProfissionalService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

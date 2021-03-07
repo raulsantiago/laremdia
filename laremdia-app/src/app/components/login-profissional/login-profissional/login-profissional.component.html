@@ -1,26 +1,27 @@
 <br>
-    <div class="container">
-        <h1>Bem vindo Profissional</h1>
-        <h4>Entre com seu login</h4>
-        <form #loginForm="ngForm" (submit)="onSubmit();">
-        <div >
+<div class="container">
+    <h1>Bem vindo Profissional</h1>
+    <h4>Entre com seu login</h4>
+    <h6 *ngIf="loginError" >Login e/ou senha incorreto.</h6>
+    <form #loginForm="ngForm" (submit)="onSubmit();">
+        <div>
             <label for="exampleDropdownFormEmail1">Email</label>
             <input type="email" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com.br"
-            name="userEmail"
-            [(ngModel)]="userEmail"
+            name="email"
+            [(ngModel)]="email"
             >
         </div>
         <div >
             <label for="exampleDropdownFormPassword1">Senha</label>
             <input type="password"  id="exampleDropdownFormPassword1" placeholder="Senha"
-            name="password"
-            [(ngModel)]="password"
+            name="senha"
+            [(ngModel)]="senha"
             >
         </div>
         <div >        
         </div>
         <button type="submit" >Entrar</button>
-        </form>
-        <div ></div>    
-        <a  href="#">Esqueceu a senha?</a>
-    </div>
+    </form>
+    <div></div>    
+    <a href="#">Esqueceu a senha?</a>
+</div>

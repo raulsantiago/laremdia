@@ -2,17 +2,16 @@ package app.br.laremdia.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name="login_cliente")
-public class LoginCliente {
+public class LoginClienteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

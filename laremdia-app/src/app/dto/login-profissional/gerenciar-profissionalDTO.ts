@@ -1,11 +1,12 @@
-export class LoginProfissionalDTO {
+export class GerenciarProfissionalDTO {
 
+    idProfissional: number 
     nome: string 
     cpf: string 
     email: string 
     celular: string 
     senha: string 
-    foto: any
+    foto: any 
     ativo: boolean 
 
 }

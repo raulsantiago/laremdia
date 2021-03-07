@@ -10,12 +10,11 @@ import javax.validation.constraints.NotNull;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CPF;
 
-
 @Entity
 @Data
 @NoArgsConstructor
 @Table(name="login_profissional")
-public class LoginProfissional {
+public class LoginProfissionalEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

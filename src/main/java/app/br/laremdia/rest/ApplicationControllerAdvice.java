@@ -1,6 +1,6 @@
-package app.br.laremdia.model.api.rest;
+package app.br.laremdia.rest;
 
-import app.br.laremdia.model.api.rest.exception.ApiErrors;
+import app.br.laremdia.rest.exception.ApiErrors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

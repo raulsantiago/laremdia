@@ -1,29 +1,55 @@
 <br>
 
-    <div class="container">
-        <h1>Bem vindo Profissional</h1>
-        <h4>Entre com seu login</h4>
-        <form >
+<div class="container">
+    <h1>Gerenciar Acesso do Profissional</h1>        
+    <h6 *ngIf="mensagemSucesso" >Cadastro com sucesso</h6>
+    <form   #cadForm="ngForm" (submit)="incluir();">
+        <div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" name="foto" />
+            <label class="custom-file-label" for="validatedCustomFile">Selecione uma foto</label>        
+        </div>
         <div >
+            <label for="exampleDropdownFormEmailnome">Nome</label>
+            <input type="text" id="exampleDropdownFormEmailnome" 
+            name="nome" [(ngModel)]="nome">
+        </div>
+        <div >
+            <label for="exampleDropdownFormEmailcpf">CPF</label>
+            <input type="text" id="exampleDropdownFormEmailcpf" 
+            name="cpf" [(ngModel)]="cpf">
+        </div>
+        <div>
             <label for="exampleDropdownFormEmail1">Email</label>
-            <input type="email" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com.br">
+            <input type="email" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com.br"
+            name="email" [(ngModel)]="email">
         </div>
-        <div >
+        <div>
+            <label for="exampleDropdownFormEmailcelular">Celular</label>
+            <input type="text" id="exampleDropdownFormEmailcelular" 
+            name="celular" [(ngModel)]="celular">
+        </div>
+        <div>
             <label for="exampleDropdownFormPassword1">Senha</label>
-            <input type="password"  id="exampleDropdownFormPassword1" placeholder="Senha">
+            <input type="password"  id="exampleDropdownFormPassword1"
+            name="senha"
+            [(ngModel)]="senha">            
         </div>
-        <div >        
+        <p>Cancelar acesso</p>
+        <div class="custom-control custom-radio custom-control-inline">                
+            <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline1">Não</label>
         </div>
-        <button type="submit" >Entrar</button>
-        </form>
-        <div ></div>    
-        <a  href="#">Esqueceu a senha?</a>
-    </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline2">Sim</label>
+        </div>
+        <br>
+        <button type="submit" >Voltar</button>
+        <button type="submit" >Salvar</button>
+    </form>
+</div>
+    <!-- (change)="uploadFoto($event, loginProfissionalDTO)" -->
     
-    <div class="custom-file mb-3">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" name="foto" (change)="uploadFoto($event, loginProfissionalDTO)"/>
-        <label class="custom-file-label" for="validatedCustomFile">Selecione uma foto</label>        
-      </div>
 
 
 

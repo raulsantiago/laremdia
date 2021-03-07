@@ -1,4 +1,4 @@
-package app.br.laremdia.model.api.rest.exception;
+package app.br.laremdia.rest.exception;
 
 import lombok.Getter;
 import java.util.Arrays;
